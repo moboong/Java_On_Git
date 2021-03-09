@@ -13,7 +13,25 @@ public class Homework03_1 {
 		sc.close();
 
 		int change = payment - price;
-		System.out.println(change);
+		// change = (a * 1000) + (b * 500) + (c * 100) + (d * 50) + (e * 10)
+		int a = change / 1000;
+		int b = (change - (a * 1000)) / 500;
+		int c = (change - (a * 1000) - (b * 500)) / 100;
+		int d = (change - (a * 1000) - (b * 500) - (c * 100)) / 50;
+		int e = (change - (a * 1000) - (b * 500) - (c * 100) - (d * 50)) / 10;
+
+		if (price > payment) {
+			System.out.println((price - payment) + "원이 부족합니다.");
+		} else if (price == payment) {
+			System.out.println("거스름돈이 없습니다.");
+		} else {
+			System.out.println("거스름돈: " + change);
+			if(a != 0) System.out.println("1000원: " + a);
+			if(b != 0) System.out.println("500원: " + b);
+			if(c != 0) System.out.println("100원: " + c);
+			if(d != 0) System.out.println("50원: " + d);
+			if(e != 0) System.out.println("10원: " + e);
+		}
 
 	}
 
