@@ -1,6 +1,6 @@
 package kr.ac.kopo.day03.homework;
 
-public class HomeworkMain08 {
+public class HomeworkMain08a {
 
 	public static void main(String[] args) {
 		int var = 0;

@@ -65,9 +65,21 @@ public class ExamMain01 {
 		//5번 - 다른 방식
 		for (int i = 0; i < 9; i++) {
 			if(i < 5) {
-//				for()
+				for(int j = 0; j < i; j++){
+					System.out.print(" ");
+				}
+				for(int j = 0; j < 5-i; j++){
+					System.out.print("*");
+				}
+				System.out.println();
 			} else {
-//				for()
+				for(int j = 0; j < 9 - i; j++){
+					System.out.print(" ");
+				}
+				for(int j = 0; j < i - 4; j++){
+					System.out.print("*");
+				}
+				System.out.println();
 			}
 		}
 		
@@ -112,13 +124,13 @@ public class ExamMain01 {
 			if(i > 4) {
 				va += 2;
 			}
-			for(int j = 0; j < i-va; j++) {
+			for(int j = 0; j < i+1-va; j++) {
 				System.out.print("*");
 			}
-			for(int j = i-va; j < 9-(i-va); j++) {
+			for(int j = i+1-va; j < 9-(i+1-va); j++) {
 				System.out.print(" ");
 			}
-			for(int j = 9-(i-va); j < 9; j++) {
+			for(int j = 9-(i+1-va); j < 9; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
