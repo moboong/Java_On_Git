@@ -1,7 +1,7 @@
 # Java_On_Git
 
-## 한글이 깨진다면 링크 접속 후 확장팩 설치 후 다시 .java파일 열고 오른쪽 클릭 후
-[크롬 인코딩 확장팩] (https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfmjfilgdlmhefphglae)
+## 한글이 깨진다면 링크 접속 후 확장팩 설치 후 다시 .java파일 열고 오른쪽 클릭 후 UTF-8로 변경
+[크롬 인코딩 확장팩](https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfmjfilgdlmhefphglae)
 
 [입력값과 사칙연산, 나머지 연산 코드](/HomeworkMain01.java)<br>
 [원둘레, 원넓이 코드](/HomeworkMain02.java)<br>
