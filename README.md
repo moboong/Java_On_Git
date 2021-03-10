@@ -1,7 +1,6 @@
 # Java_On_Git
 
-## 한글이 깨진다면 링크 접속 후 확장팩 설치 후 
-## 다시 .java파일 열고 오른쪽 클릭 후 UTF-8로 변경
+## 한글이 깨진다면 링크 접속 후 확장팩 설치 후 다시 .java파일 열고 오른쪽 클릭 후 UTF-8로 변경
 [크롬 인코딩 확장팩 바로가기](https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfmjfilgdlmhefphglae)
 
 ## 0309
