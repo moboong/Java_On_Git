@@ -2,7 +2,7 @@ package kr.ac.kopo.day02.homework;
 
 import java.util.Scanner;
 
-public class Homework03 {
+public class HomeworkMain03b {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

@@ -2,7 +2,7 @@ package kr.ac.kopo.day02.homework;
 
 import java.util.Scanner;
 
-public class Homework02 {
+public class HomeworkMain02 {
 
 	public static void main(String[] args) {
 		final double PI = 3.141592;
