@@ -17,6 +17,8 @@ public class HomeworkMain04 {
 		} else {
 			System.out.println(first + "가 " + second + "의 배수인지 판단 결과 : " + false);
 		}
+		
+		System.out.println(first + "가 " + second + "의 배수인지 판단 결과 : " + (second > 0 && first % second == 0));
 	}
 
 }
