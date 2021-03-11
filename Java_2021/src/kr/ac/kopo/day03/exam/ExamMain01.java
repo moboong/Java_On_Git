@@ -42,7 +42,7 @@ public class ExamMain01 {
 			System.out.println();
 		}
 
-		System.out.println("--------------------");
+		System.out.println("----5번 내 방식---------");
 		// for 3개 if 1개
 		//5번
 		int num = 0;
@@ -59,7 +59,7 @@ public class ExamMain01 {
 			System.out.println();
 		}
 		
-		System.out.println("--------------------");
+		System.out.println("----5번 교수님 방식 1------");
 		// for 2개 if 2개
 		// 교수님이 알려준 방식 -> 표를 그려라!
 		//5번 - 다른 방식
@@ -73,14 +73,27 @@ public class ExamMain01 {
 				}
 				System.out.println();
 			} else {
-				for(int j = 0; j < 9 - i; j++){
+				for(int j = 0; j < 8 - i; j++){
 					System.out.print(" ");
 				}
-				for(int j = 0; j < i - 4; j++){
+				for(int j = 0; j < i - 3; j++){
 					System.out.print("*");
 				}
 				System.out.println();
 			}
+		}
+		
+		System.out.println("----5번 교수님 방식 2------");
+		//5번 - 다른 방식 2
+		for (int i = 0; i < 9; i++) {
+			for(int j = 0; j < 5; j++){
+				if(i > j) {
+					System.out.print(" ");
+				} else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
 		}
 		
 		System.out.println("--------------------");
