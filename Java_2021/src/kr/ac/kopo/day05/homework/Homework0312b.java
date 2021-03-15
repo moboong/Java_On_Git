@@ -1,5 +1,6 @@
 package kr.ac.kopo.day05.homework;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Homework0312b {
@@ -8,6 +9,7 @@ public class Homework0312b {
 		Scanner sc = new Scanner(System.in);
 		int[] even = new int[9];
 		int[] odd = new int[9];
+		int[] arr = new int[9];
 
 		int i = 0;
 		while (i < 9) {
@@ -36,6 +38,11 @@ public class Homework0312b {
 				System.out.print(odd[j] + " ");
 			}
 		}
+		
+		System.out.println();
+		
+		System.arraycopy(even, 0, arr, 0, even.length);
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	//교수님 해설 대로 풀수 있도록 훈련
