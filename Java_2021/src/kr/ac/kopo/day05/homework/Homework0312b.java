@@ -37,5 +37,7 @@ public class Homework0312b {
 			}
 		}
 	}
+	
+	//교수님 해설 대로 풀수 있도록 훈련
 
 }
