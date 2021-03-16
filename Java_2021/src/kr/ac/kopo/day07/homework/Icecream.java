@@ -6,7 +6,7 @@ public class Icecream {
 	String name;
 	int price;
 	Scanner sc = new Scanner(System.in);
-
+	
 	void setPrice(String msg) {
 		System.out.print(msg);
 		int input = sc.nextInt();
