@@ -7,6 +7,14 @@ public class Icecream {
 	int price;
 	Scanner sc = new Scanner(System.in);
 	
+	int getNum() {
+		System.out.print("아이스크림 몇개 구입하실? : ");
+		int num = sc.nextInt();
+		sc.nextLine();
+		return num;
+	}
+	
+	
 	void setPrice(String msg) {
 		System.out.print(msg);
 		int input = sc.nextInt();
@@ -28,6 +36,7 @@ public class Icecream {
 	void setMember(Icecream[] ic) {
 		for(int i = 0; i < ic.length; i++) {
 			System.out.println("*** " + (i + 1) + "번째 아이스크림 구매정보 입력 ***");
+			ic[i] = new Icecream();
 			ic[i].setName("아이스크림 이름 : ");
 			ic[i].setPrice("아이스크림 가격 : ");
 		}
