@@ -3,17 +3,11 @@ package kr.ac.kopo.day07.homework;
 public class CalculatorMain {
 
 	public static void main(String[] args) {
-		Calculator c = new Calculator();
-		c.setNum();
+		Calculator c = new Calculator(); //없으면 입력을 받고
+		c.calAll();
 		
-		c.add();
-		c.minus();
-		c.multi();
-		c.divi();
-		System.out.println(c.check(c.num));
-		System.out.println(c.check(c.num2));
-	
-
+		Calculator c2 = new Calculator(20, 5); //있으면 입력 x
+		c2.calAll();
 	}
 
 }
