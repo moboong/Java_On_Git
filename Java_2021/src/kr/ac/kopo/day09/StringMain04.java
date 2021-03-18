@@ -63,6 +63,8 @@ public class StringMain04 {
 		
 		System.out.println(strNum + 10);
 		
+		
+		//50분
 	}
 
 }
