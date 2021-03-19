@@ -2,13 +2,13 @@ package kr.ac.kopo.day10;
 
 public class Manager extends Employee {
 
-	Employee[] empList; //관리 사원 목록
+	private Employee[] empList; //관리 사원 목록
 	
-	Manager(){
+	public Manager(){
 		
 	}// 이것도 누군가가 상속해갈 수 있으니 기본 생성자 만들어놔야해.
 	
-	Manager(int no, String name, int salary, String grade, Employee[] empList){
+	public Manager(int no, String name, int salary, String grade, Employee[] empList){
 		super(no, name, salary, grade); //멤버변수 private해도 잘 작동해.
 		this.empList = empList;
 		

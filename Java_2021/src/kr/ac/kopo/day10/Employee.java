@@ -8,13 +8,13 @@ public class Employee {
 	private int salary;
 	private String grade;
 	
-	Employee(){
+	public Employee(){
 		
 	}// 와.... 소름돋아.... 이거 왜 항상 습관적으로 만들라고 했는지 이제 알았다.
 	// 밑에서 super()이게 생략되어있고 이건 Employee() 이놈이니까..
 	
 	
-	Employee(int no, String name, int salary, String grade){
+	public Employee(int no, String name, int salary, String grade){
 		this.no =no;
 		this.name = name;
 		this.salary = salary;
