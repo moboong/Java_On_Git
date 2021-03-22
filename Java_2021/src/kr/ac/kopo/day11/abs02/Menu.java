@@ -29,6 +29,8 @@ public class Menu {
 		switch(no) {
 		case 1:
 			p = new LGPrinter();
+			LGPrinter c = (LGPrinter) p;
+			c.color();
 			break;
 		case 2:
 			p = new SamsungPrinter();
