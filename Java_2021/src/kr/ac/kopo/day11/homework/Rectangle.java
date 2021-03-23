@@ -15,8 +15,9 @@ public class Rectangle extends Figure { // Lv2
 		System.out.println("직사각형");
 		System.out.println("넓이 " + getWidth() + " 높이 " + getHeight() + "인 직사각형 넓이 : " + getArea());
 	}
-
-	public int getArea() {
+	
+	@Override
+	public double getArea() {
 		return width * height;
 	}
 

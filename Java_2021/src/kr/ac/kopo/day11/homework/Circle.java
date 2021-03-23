@@ -2,12 +2,13 @@ package kr.ac.kopo.day11.homework;
 
 public class Circle extends Figure { // Lv2
 	private int radius;
-	public static double PI = Math.PI;
+	public static final double PI = Math.PI;
 
 	public Circle() {
 		this.radius = r.nextInt(8) + 2;
 	}
-
+	
+	@Override
 	public double getArea() {
 		return radius * radius * PI;
 	}

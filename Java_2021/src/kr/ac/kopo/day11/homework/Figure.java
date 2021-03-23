@@ -7,4 +7,6 @@ public abstract class Figure { // Lv1
 	Random r = new Random();
 
 	public abstract void printArea();
+	
+	public abstract double getArea();
 }
