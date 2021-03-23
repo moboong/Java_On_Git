@@ -12,9 +12,22 @@ public class ScissorsRockPaper implements Game {
 	
 	@Override
 	public int startGame(int you) {
-		int me = r.nextInt(2) + 1;
-		
-		return 0;
+		int result = 0;
+		int me = r.nextInt(3) + 1;
+		if(me == SCISSOR){
+			if(you == 1) result = 0;
+			if(you == 2) result = 1;
+			if(you == 3) result = -1;
+		} else if(me == ROCK){
+			if(you == 1) result = -1;
+			if(you == 2) result = 0;
+			if(you == 3) result = 1;
+		} else if(me == PAPER){
+			if(you == 1) result = 1;
+			if(you == 2) result = -1;
+			if(you == 3) result = 0;
+		}
+		return result;
 	}
 	
 	
