@@ -30,8 +30,8 @@ public class DateMain01 {
 
 		String pattern = "yyyy-MM-dd HH:mm:ss E";
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-		System.out.println(sdf.format(new Date()));//여기에 c를 넣고 싶어. 그러려면 c를 Date로 변경
-		
+		System.out.println(sdf.format(new Date()));// 여기에 c를 넣고 싶어. 그러려면 c를 Date로 변경
+
 		Date d = c.getTime();
 		System.out.println(sdf.format(d));
 	}
