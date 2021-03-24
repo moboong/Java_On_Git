@@ -30,6 +30,19 @@ public class ScissorsRockPaper implements Game {
 		return result;
 	}
 	
+	@Override
+	public int getYourNum() {
+		GameMeun g = new GameMeun();
+		int you = g.inputInt("가위바위보 게임입니다.\n가위바위보중 하나를 선택하세요.\n(1:가위,2.바위,3.보)");
+		if (you == 1 || you == 2 || you == 3) {
+			return you;
+		} else {
+			System.out.println("다시 입력하세요");
+			getYourNum();
+			return you;
+		}
+	}
+	
 	
 	
 	

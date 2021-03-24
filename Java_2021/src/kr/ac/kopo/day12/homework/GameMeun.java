@@ -8,7 +8,8 @@ public class GameMeun {
 	public static int totalDraw;
 
 	Scanner sc = new Scanner(System.in);
-
+	
+	//게임 선택 및 전체 게임 진행
 	public void selectGame() {
 		System.out.println("게임을 선택하세요");
 		System.out.println("A. 가위바위보\nB. 주사위 값 맞추기\nC. 종료");
@@ -17,22 +18,25 @@ public class GameMeun {
 		if (str.equals("A") || str.equals("B") || str.equals("C")) {
 
 			Game g;
+			int you;
+			int result;
 			switch (str) {
 			case "A":
 				g = new ScissorsRockPaper();
-				int you = getYourNum();
-				int result = g.startGame(you);
+				you = g.getYourNum();
+				result = g.startGame(you);
 				checkResult(result);
 				break;
 			case "B":
 				g = new Dice();
-				int you02 = getYourDice();
-				int result02 = g.startGame(you02);
-				checkResult(result02);
+				you = g.getYourNum();
+				result = g.startGame(you);
+				checkResult(result);
 				break;
 
 			case "C":
-				System.out.println("게임을 종료합니다.\n당신의 게임 전적은 " + GameMeun.getTotalWin() + "승 " + GameMeun.getTotalLose()
+				System.out.println("게임을 종료합니다.\n당신의 게임 전적은 " 
+						+ GameMeun.getTotalWin() + "승 " + GameMeun.getTotalLose()
 						+ "패 " + GameMeun.getTotalDraw() + "무입니다.");
 				break;
 			}
@@ -42,35 +46,16 @@ public class GameMeun {
 		}
 
 	}
-
-	public int getYourNum() {
-		System.out.println("가위바위보 게임입니다.\n가위바위보중 하나를 선택하세요.\n(1:가위,2.바위,3.보)");
+	
+	//사용자에게 숫자 받기
+	public int inputInt(String msg) {
+		System.out.println(msg);
 		int you = sc.nextInt();
 		sc.nextLine();
-
-		if (you == 1 || you == 2 || you == 3) {
-			return you;
-		} else {
-			System.out.println("다시 입력하세요");
-			getYourNum();
-			return you;
-		}
+		return you;
 	}
-
-	public int getYourDice() {
-		System.out.println("주사위 값 맞추기 게임입니다.\n주사위 숫자를 선택하세요(1~6값 중 하나)");
-		int you = sc.nextInt();
-		sc.nextLine();
-
-		if (you >= 1 && you <= 6) {
-			return you;
-		} else {
-			System.out.println("다시 입력하세요");
-			getYourDice();
-			return you;
-		}
-	}
-
+	
+	//승패 결과 체크
 	private void checkResult(int result) {
 		if (result == 1) {
 			System.out.println("You win");
@@ -90,24 +75,12 @@ public class GameMeun {
 		return totalWin;
 	}
 
-	public static void setTotalWin(int totalWin) {
-		GameMeun.totalWin = totalWin;
-	}
-
 	public static int getTotalLose() {
 		return totalLose;
 	}
 
-	public static void setTotalLose(int totalLose) {
-		GameMeun.totalLose = totalLose;
-	}
-
 	public static int getTotalDraw() {
 		return totalDraw;
-	}
-
-	public static void setTotalDraw(int totalDraw) {
-		GameMeun.totalDraw = totalDraw;
 	}
 
 }
