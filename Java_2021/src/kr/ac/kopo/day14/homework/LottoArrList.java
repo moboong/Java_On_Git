@@ -13,8 +13,6 @@ public class LottoArrList {
 	Random r = new Random();
 
 	public void pickAlgoCaseOne(int input) {
-		ArrayList<Integer> list;
-
 		for (int i = 1; i <= input; i++) {
 			System.out.print("게임 " + i + ": ");
 			list = LottoMachine();
@@ -23,6 +21,22 @@ public class LottoArrList {
 				int idx = r.nextInt(list.size());
 				arr[j] = list.remove(idx);
 			}
+			System.out.println(Arrays.toString(arr));
+		}
+	}
+
+	public void pickAlgoCaseTwo(int input) {
+		for (int i = 1; i <= input; i++) {
+			System.out.print("게임 " + i + ": ");
+			list = new ArrayList<>();
+			list.add(r.nextInt(45) + 1);
+			while (list.size() < 6) {
+				int num = r.nextInt(45) + 1;
+				if (!list.contains(num)) {
+					list.add(num);
+				}
+			}
+			Object[] arr = list.toArray();
 			System.out.println(Arrays.toString(arr));
 		}
 	}
