@@ -22,5 +22,6 @@ public class LottoSet {
 			System.out.println(Arrays.toString(arr));
 		}
 	}
+	
 
 }
