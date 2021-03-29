@@ -22,6 +22,15 @@ public class MapMain01 {
 		map.put("bbb", "2222");
 		map.put("ccc", "3333");
 		map.put("ddd", "4444");
+		
+		
+		Set<Entry<String, String>> e = map.entrySet();
+		for(Entry<String, String> ent : e) {
+			System.out.println(ent.getKey());
+		}
+		
+		
+		
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("패스워드 변경 서비스입니다");

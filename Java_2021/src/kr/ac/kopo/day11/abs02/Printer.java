@@ -4,5 +4,5 @@ public abstract class Printer { //lv1
 	
 	String productName;
 	
-	public abstract void print();
+	abstract void print();
 }
