@@ -59,6 +59,7 @@ public class FileIOMain05 {
 		} finally {
 			FileClose.close(dos, fos);
 		}
-		System.out.println("dogInfo.txt에 저장완료...");
+		System.out.println("dogInfo.txt에 저장완료"
+				+ "...");
 	}
 }

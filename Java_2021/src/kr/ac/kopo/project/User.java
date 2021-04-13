@@ -25,5 +25,4 @@ public class User {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}	
-	
 }

@@ -46,7 +46,7 @@ public class IcecreamMarket {
 		System.out.println("<총 " + iceArr.length + "개 구매정보 출력>");
 		System.out.println("번호\t아이스크림명\t아이스크림가격");
 		for(int i = 0; i < iceArr.length; i++) {
-			System.out.println( (i+1) + iceArr[i].name + "     " + iceArr[i].price); //이렇게 다른 클래스의 멤버변수를 직접 사용하는 건 좋지않아.
+			System.out.println( (i+1) + iceArr[i].getfuck() + "     " + iceArr[i].getPrice()); //이렇게 다른 클래스의 멤버변수를 직접 사용하는 건 좋지않아.
 		}
 	}// 만약에 Icecream 클래스를 수정하면 자세히 말해 멤버변수명을 수정하면 와.... 소름돋네
 	// 그래서 멤버변수로 소통하는 것은 바람직하지 못하고 메소드를 통해 소통해야해..!!

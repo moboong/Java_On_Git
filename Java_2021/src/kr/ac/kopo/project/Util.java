@@ -21,8 +21,8 @@ public class Util {
 			fis = new FileInputStream("iodata/user.txt");
 			dis = new DataInputStream(fis);
 
-			String data = dis.readUTF();
-
+			String data = dis.readLine(); // UFT로 읽으면 자꾸 이상한 문자가 생김.
+			
 			String[] strArr = data.split("/");
 
 			loop: for (int i = 0; i < strArr.length; i++) {
@@ -53,10 +53,11 @@ public class Util {
 
 		try {
 
-			fos = new FileOutputStream("iodata/user.txt");
+			fos = new FileOutputStream("iodata/user.txt", true);
 			dos = new DataOutputStream(fos);
 
-			dos.writeUTF(u.getId() + ":" + u.getPw() + "/");
+			dos.writeBytes((u.getId() + ":" + u.getPw() + "/").trim());
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -90,5 +91,24 @@ public class Util {
 			System.out.println("회원가입이 완료됐습니다.");
 		}
 		return pw;
+	}
+	
+	public void welcome() {
+		System.out.println("1.로그인 2.회원가입 3.종료");
+		int n = sc.nextInt();
+		sc.nextLine();
+		
+		switch (n) {
+		case 1:
+			System.out.println("로그인 하세요.");
+			//login();
+			break;
+		case 2:
+			register();
+			break;
+		case 3:
+			System.out.println("Bye~");
+			break;
+		}
 	}
 }

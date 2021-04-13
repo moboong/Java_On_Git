@@ -2,6 +2,7 @@ package kr.ac.kopo.day11.homework;
 
 public class Square extends Rectangle { // Lv3
 	public Square() {
+		super();
 		super.setHeight(getWidth()); // 양변이 같아짐.
 	}
 
