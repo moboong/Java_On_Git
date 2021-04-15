@@ -21,6 +21,7 @@ public class Util {
 			fis = new FileInputStream("iodata/user.txt");
 			dis = new DataInputStream(fis);
 
+			@SuppressWarnings("deprecation")
 			String data = dis.readLine(); // UFT로 읽으면 자꾸 이상한 문자가 생김.
 			
 			String[] strArr = data.split("/");
@@ -64,7 +65,6 @@ public class Util {
 		} finally {
 			FileClose.close(dos, fos);
 		}
-		System.out.println("user.txt에 저장완료...");
 	}
 
 	public void register() {
@@ -76,6 +76,8 @@ public class Util {
 			String pw = checkPw();
 			write(id, pw);
 		}
+		
+		welcome();
 	}
 
 	public String checkPw() {
