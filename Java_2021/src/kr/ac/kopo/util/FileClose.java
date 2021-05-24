@@ -10,9 +10,11 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 public class FileClose {
-
+	
+	// InputStream
 	public static void close(InputStream is) {
 
 		if (is != null) {
@@ -24,6 +26,7 @@ public class FileClose {
 		}
 	}
 
+	// OutputStream
 	public static void close(OutputStream os) {
 		if (os != null) {
 			try {
@@ -32,9 +35,9 @@ public class FileClose {
 				e.printStackTrace();
 			}
 		}
-
 	}
-
+	
+	// InputStream + OutputStream
 	public static void close(InputStream bis, InputStream is) {
 		FileClose.close(bis);
 		FileClose.close(is);
@@ -45,6 +48,8 @@ public class FileClose {
 		FileClose.close(os);
 	}
 
+	
+	// FileReader
 	public static void close(FileReader fr) {
 
 		if (fr != null) {
@@ -55,7 +60,7 @@ public class FileClose {
 			}
 		}
 	}
-
+	// FileWriter
 	public static void close(FileWriter fw) {
 		if (fw != null) {
 			try {
@@ -66,7 +71,7 @@ public class FileClose {
 		}
 
 	}
-
+	// BufferedReader
 	public static void close(BufferedReader br) {
 
 		if (br != null) {
@@ -77,7 +82,7 @@ public class FileClose {
 			}
 		}
 	}
-
+	// BufferedWriter
 	public static void close(BufferedWriter bw) {
 		if (bw != null) {
 			try {
@@ -88,19 +93,34 @@ public class FileClose {
 		}
 
 	}
-
+	// FileReader + FileWriter
 	public static void close(FileReader fr, FileWriter fw) {
 		FileClose.close(fr);
 		FileClose.close(fw);
 	}
-
+	// BufferedReader + BufferedWriter
 	public static void close(BufferedReader br, BufferedWriter bw) {
 		FileClose.close(br);
 		FileClose.close(bw);
 	}
+	
+	
+	// PrintWriter
+		public static void close(PrintWriter pw) {
 
-	///
-
+			if (pw != null) {
+				try {
+					pw.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	
+	
+	
+	
+	// FileInputStream
 	public static void close(FileInputStream fi) {
 
 		if (fi != null) {
@@ -111,7 +131,8 @@ public class FileClose {
 			}
 		}
 	}
-
+	
+	// FileOutputStream
 	public static void close(FileOutputStream fo) {
 		if (fo != null) {
 			try {
@@ -123,13 +144,7 @@ public class FileClose {
 
 	}
 
-	public static void close(FileInputStream fi, FileOutputStream fo) {
-		FileClose.close(fi);
-		FileClose.close(fo);
-	}
-
-	//
-
+	// ObjectInputStream
 	public static void close(ObjectInputStream ois) {
 
 		if (ois != null) {
@@ -140,7 +155,7 @@ public class FileClose {
 			}
 		}
 	}
-
+	// ObjectOutputStream
 	public static void close(ObjectOutputStream oos) {
 		if (oos != null) {
 			try {
@@ -151,14 +166,5 @@ public class FileClose {
 		}
 
 	}
-
-	public static void close(ObjectInputStream ois, ObjectOutputStream oos) {
-		FileClose.close(ois);
-		FileClose.close(oos);
-	}
-	
-	
-	//
-	
 
 }
