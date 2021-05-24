@@ -5,7 +5,7 @@ import java.io.Serializable;
 // VO란? : Value Object or ( = DTO) 객체
 public class UserVO implements Serializable {
 	private String name;
-	private int age;
+	private transient int age;
 	private String phone;
 	private String addr;
 
