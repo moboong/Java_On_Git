@@ -34,6 +34,7 @@ public class FileIOMain02 {
 				int c = fis.read();
 				if (c == -1)
 					break;
+				System.out.println(c);
 				fos.write(c);
 			}
 

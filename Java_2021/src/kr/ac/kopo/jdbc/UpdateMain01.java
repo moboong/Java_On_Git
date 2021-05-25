@@ -33,11 +33,20 @@ public class UpdateMain01 {
 			String name = sc.nextLine();
 			
 			// 3단계
-			String  sql =  "update t_test ";
-					sql += " set name = ? ";
-					sql += " where id = ? ";
+			// String은 수정 불가 매우 비효율 성능 측면에서도 낫굿 그래서 StringBuilder
+			// 우리 웹사이트 만들잖아? 변화가 자주 일어나는 상황에서 String 쓰면 안돼.
+			// 지킬 수 있는 단축할 수 있는 부분을 최대한 챙겨서 성능을 끌어올리려고 해야해.
+//			String  sql =  "update t_test ";
+//					sql += " set name = ? ";
+//					sql += " where id = ? ";
+			
+			StringBuilder sql = new StringBuilder();
+			sql.append("update t_test ");
+			sql.append(" set name = ? ");
+			sql.append(" where id = ? ");
 					
-			pstmt = conn.prepareStatement(sql);
+			
+			pstmt = conn.prepareStatement(sql.toString()); //빌더를 다시 스트링으로 ㄱ
 			pstmt.setString(1, name);
 			pstmt.setString(2, id);
 			
