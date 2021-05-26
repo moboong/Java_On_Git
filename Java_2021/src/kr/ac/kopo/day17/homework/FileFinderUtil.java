@@ -66,11 +66,11 @@ public class FileFinderUtil {
 
 	// 폴더정보 출력 메소드
 	public void fileInfo() {
-		System.out.println("-------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("\t\t\t" + dirObj.getName() + " 폴더정보");
-		System.out.println("-------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("이름\t\t\t종류\t\t크기\t\t마지막수정날짜");
-		System.out.println("-------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 			
 		String[] list = dirObj.list();
 		File f;
@@ -78,11 +78,11 @@ public class FileFinderUtil {
 
 		for (String file : list) {
 			f = new File(dirObj.getName() +"\\" + file);
-			System.out.println(f.getName() + "\t" + (f.isFile() ? "파일" : "폴더") + "\t" + f.length() + "bytes\t" + sdf.format(new Date(f.lastModified())));
+			System.out.printf("%-20s\t%-15s\t%d\t\t%s\n", f.getName(), (f.isFile() ? "파일" : "폴더"), f.length(), sdf.format(new Date(f.lastModified())) );
 		}
-		System.out.println("-------------------------------------------------------------------");
-		System.out.println("[M]새폴더  [R]이름변경  [D]삭제 [.]상위폴더이동 [move]하위폴더 이동 [exit]시스템종료");
-		System.out.println("-------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("[M]새폴더   [R]이름변경   [D]삭제   [.]상위폴더이동   [move]하위폴더이동   [exit]시스템종료 ");
+		System.out.println("---------------------------------------------------------------------------");
 	}
 
 }
