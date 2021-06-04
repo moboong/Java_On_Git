@@ -22,4 +22,13 @@ public class JDBCClose {
 			}
 		}
 	}
+	public static void close(Statement pstmt) {
+		if(pstmt != null) {
+			try {
+				pstmt.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
