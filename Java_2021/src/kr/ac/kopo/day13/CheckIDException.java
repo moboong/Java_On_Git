@@ -2,6 +2,11 @@ package kr.ac.kopo.day13;
 
 public class CheckIDException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public CheckIDException() {
 		super();
 	}

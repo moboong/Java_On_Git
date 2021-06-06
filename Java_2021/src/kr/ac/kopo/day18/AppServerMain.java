@@ -25,6 +25,7 @@ public class AppServerMain {
 			dos.flush();
 			
 			client.close();
+			server.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

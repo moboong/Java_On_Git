@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class ExceptionMain04 {
 
+	@SuppressWarnings({ "resource", "unused" })
 	public static void main(String[] args) {
 
 		// FileReader fr = new FileReader("a.txt");

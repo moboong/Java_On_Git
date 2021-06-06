@@ -16,6 +16,7 @@ public class EchoThreadServerMain {
 		
 		try {
 			
+			@SuppressWarnings("resource")
 			ServerSocket server = new ServerSocket(10001);
 			System.out.println("에코스레드 서버 시작...!");
 			

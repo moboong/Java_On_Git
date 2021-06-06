@@ -9,7 +9,23 @@ class MemberInfo {
 	private Car c;
 	
 	MemberInfo(Member m, Car c) {
+		this.setM(m);
+		this.setC(c);
+	}
+
+	public Member getM() {
+		return m;
+	}
+
+	public void setM(Member m) {
 		this.m = m;
+	}
+
+	public Car getC() {
+		return c;
+	}
+
+	public void setC(Car c) {
 		this.c = c;
 	}
 }
@@ -133,7 +149,23 @@ class Car {
 
 	public Car(String name, String id) {
 		super();
+		this.setName(name);
+		this.setId(id);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
 		this.id = id;
 	}
 }

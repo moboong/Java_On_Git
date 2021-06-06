@@ -14,15 +14,17 @@ import java.util.Scanner;
 
 public class ExceptionMain06 {
 	
+	@SuppressWarnings("resource")
 	static void register() throws CheckIDException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("등록할 ID를 입력하세요 : ");
 		String id = sc.nextLine();
 		
-		if (id.length() > 8)
+		if (id.length() > 8){
 			throw new CheckIDException("ID는 최대 8글자만 가능합니다");
-		
+		}
 		System.out.println("ID를 등록하였습니다");
+		sc.close();//이거 닫아도 되냐?
 	}
 	
 	public static void main(String[] args) {

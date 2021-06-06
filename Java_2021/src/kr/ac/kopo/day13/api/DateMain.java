@@ -17,8 +17,11 @@ public class DateMain {
 		System.out.println("d :" + d); //?엥 주소값 찍혀야하는데? 
 		// 이거 왜 그러냐 -> toString오버라이딩해서
 		
+		@SuppressWarnings("deprecation")
 		int year = d.getYear() + 1900;
+		@SuppressWarnings("deprecation")
 		int month = d.getMonth() + 1;
+		@SuppressWarnings("deprecation")
 		int date = d.getDate();
 		
 		System.out.println("오늘은 " + year + "년 " + month + "월 " + date + "일");

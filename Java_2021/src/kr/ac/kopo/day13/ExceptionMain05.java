@@ -14,6 +14,7 @@ public class ExceptionMain05 {
 		}
 	}
 
+	@SuppressWarnings("null")
 	public static void b() throws Exception { //ArithmeticException, NullPointerException { // 메인이 불렀으니까 메인 너가 처리해.
 		System.out.println("b()메소드 호출...");
 		String str = null;
@@ -25,6 +26,7 @@ public class ExceptionMain05 {
 		System.out.println("a() 메소드 호출...");
 
 		try {
+			@SuppressWarnings({ "resource", "unused" })
 			FileReader fr = new FileReader("a.txt");
 		} catch (Exception e) {
 			e.printStackTrace();

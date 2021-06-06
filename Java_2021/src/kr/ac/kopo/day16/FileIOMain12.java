@@ -49,6 +49,7 @@ public class FileIOMain12 {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	public static void read() {
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;

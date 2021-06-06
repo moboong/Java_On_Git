@@ -55,6 +55,7 @@ public class MapMain01 {
 		map.put(id, newPassword); // 이러면 덮어쓰기된다. 수정이 된다.
 
 		System.out.println("패스워드가 변경되었습니다");
+		sc.close();
 
 		// 이제 출력하려고 봤더니 인덱스, for-each, 이터레이트, 투어레이 등등 안된다.!!!!!
 		// 이게 좀 다르네???

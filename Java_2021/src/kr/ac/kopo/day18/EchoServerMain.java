@@ -47,6 +47,7 @@ public class EchoServerMain {
 				pw.println(msg);
 				pw.flush();
 			}
+			server.close(); //이거 닫아도 되냐?
 
 		} catch (Exception e) {
 			e.printStackTrace();

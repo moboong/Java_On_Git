@@ -4,6 +4,7 @@ import java.util.Date;
 
 class TimeThread extends Thread {
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void run() {
 		while(true) {

@@ -53,7 +53,7 @@ public class UpdateMain01 {
 			// 4단계
 			int cnt = pstmt.executeUpdate();
 			System.out.println(cnt + "개 행이 수정");
-			
+			sc.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -74,5 +74,6 @@ public class UpdateMain01 {
 				}
 			}
 		}
+		
 	}
 }
