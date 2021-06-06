@@ -68,9 +68,9 @@ public class BankingDAO {
 			StringBuilder sql = new StringBuilder();
 			StringBuilder sql2 = new StringBuilder();
 			
-			sql.append("INSERT INTO ACCOUNTS (BNAME, ACCOUNT_NO, ACCOUNT_ID, BALANCE, ALIAS) ");
+			sql.append("INSERT INTO ACCOUNTS (BCODE, ACCOUNT_NO, ACCOUNT_ID, BALANCE, ALIAS) ");
 			sql.append(
-					" VALUES('하나', TO_CHAR(SYSDATE,'YY') || TO_CHAR(SYSDATE,'DDD') || TO_CHAR(SYSTIMESTAMP,'HHMMSSFF1'), ? , ? , ? ) ");
+					" VALUES('101', TO_CHAR(SYSDATE,'YY') || TO_CHAR(SYSDATE,'DDD') || TO_CHAR(SYSTIMESTAMP,'HHMMSSFF1'), ? , ? , ? ) ");
 
 			pstmt = conn.prepareStatement(sql.toString());
 
@@ -140,7 +140,7 @@ public class BankingDAO {
 
 			StringBuilder sql = new StringBuilder();
 			sql.append("UPDATE ACCOUNTS SET BALANCE = NULL, ALIAS = '폐기' ");
-			sql.append(" WHERE ACCOUNT_ID = ? AND BNAME = '하나' AND ACCOUNT_NO = ? AND BALANCE = 0 ");
+			sql.append(" WHERE ACCOUNT_ID = ? AND BCODE = '101' AND ACCOUNT_NO = ? AND BALANCE = 0 ");
 			pstmt = conn.prepareStatement(sql.toString());
 			
 			pstmt.setString(1, newAccount.getAccount_id());
@@ -167,33 +167,34 @@ public class BankingDAO {
 			conn = new ConnectionFactory().getConnection();
 
 			StringBuilder sql = new StringBuilder();
-			sql.append("SELECT * FROM ACCOUNTS ");
+			sql.append("SELECT B.BNAME, A.ACCOUNT_NO, A.ACCOUNT_ID, A.BALANCE, A.ALIAS FROM ACCOUNTS A, BANKCODE B ");
 			sql.append(" WHERE 1=1 ");
-			sql.append(" AND ACCOUNT_ID = ? ");
-			sql.append(" AND BALANCE IS NOT NULL ");
+			sql.append(" AND A.BCODE = B.CODE ");
+			sql.append(" AND A.ACCOUNT_ID = ? ");
+			sql.append(" AND A.BALANCE IS NOT NULL ");
 
 			// null이 아니면 부분 출력
-			if (!(newAccount.getBname() == null || newAccount.getBname().equals(""))) {
-				sql.append(" AND BNAME = ? ");
+			if (!(newAccount.getBcode() == null || newAccount.getBcode().equals(""))) {
+				sql.append(" AND A.BCODE = ? ");
 			}
 
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, newAccount.getAccount_id());
 
-			if (!(newAccount.getBname() == null || newAccount.getBname().equals(""))) {
-				pstmt.setString(2, newAccount.getBname());
+			if (!(newAccount.getBcode() == null || newAccount.getBcode().equals(""))) {
+				pstmt.setString(2, newAccount.getBcode());
 			}
 
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				String bname = rs.getString("BNAME");
+				String bcode = rs.getString("BNAME");
 				String account_no = rs.getString("ACCOUNT_NO");
 				String account_id = rs.getString("ACCOUNT_ID");
 				long balance = rs.getLong("BALANCE");
 				String alias = rs.getString("ALIAS");
 
-				AccountVO account = new AccountVO(bname, account_no, account_id, balance, alias);
+				AccountVO account = new AccountVO(bcode, account_no, account_id, balance, alias);
 				list.add(account);
 			}
 

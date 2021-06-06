@@ -43,7 +43,7 @@ public class AddUI extends BaseUI {
 			String alias = scanStr("✌ 통장 별칭을 입력하세요: ");
 
 			AccountVO newAccount = new AccountVO();
-			newAccount.setBname("하나");
+			newAccount.setBcode("101");
 			newAccount.setAccount_id(session.getId());
 			newAccount.setBalance(initBalance);
 			newAccount.setAlias(alias);

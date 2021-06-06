@@ -1,14 +1,14 @@
 package kr.ac.kopo.project02.vo;
 
 public class AccountVO {
-	private String bname;
+	private String bcode;
 	private String account_no;
 	private String account_id;
 	private long balance;
 	private String alias;
 
 	public AccountVO(String bname, String account_no, String account_id, long balance, String alias) {
-		this.bname = bname;
+		this.bcode = bname;
 		this.account_no = account_no;
 		this.account_id = account_id;
 		this.balance = balance;
@@ -19,12 +19,12 @@ public class AccountVO {
 
 	}
 
-	public String getBname() {
-		return bname;
+	public String getBcode() {
+		return bcode;
 	}
 
-	public void setBname(String bname) {
-		this.bname = bname;
+	public void setBcode(String bcode) {
+		this.bcode = bcode;
 	}
 
 	public String getAccount_no() {
@@ -61,7 +61,7 @@ public class AccountVO {
 
 	@Override
 	public String toString() {
-		return "[은행명:" + bname + ", 계좌번호:" + account_no + ", 잔액:"
+		return "[은행명:" + bcode + ", 계좌번호:" + account_no + ", 잔액:"
 				+ balance + ", 계좌명:" + alias + "]";
 	}
 
